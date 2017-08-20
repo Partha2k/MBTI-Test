@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Change Password for Admin Login</h2>
+		
+      {% for message in form.new_password.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form action = "http://192.168.0.102:5000/admin" method = post>
+         <fieldset>
+            <legend>Change Password</legend>
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.old_password.label }}<br>
+               {{ form.old_password }}
+               <br>
+               
+               {{ form.new_password.label }}<br>
+               {{ form.new_password }}
+               <br>
+
+               {{ form.confirm.label }}<br>
+               {{ form.confirm }}
+               <br>
+              
+               {{ form.submit }}
+               
+            </div>
+
+            
+         </fieldset>
+      </form>
+      
+   </body>
+</html>

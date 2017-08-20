@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Client Login</h2>
+      {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+      <ul class="flashes">
+      <div class="message_flash">{{ message }}</div>
+      </ul>
+      {% endfor %}
+      {% endwith %}
+    
+
+		
+      {% for message in form.username.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.password.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form method = post>
+         <fieldset>
+            <legend>This Website is under development</legend>
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.username.label }}<br>
+               {{ form.username }}
+               <br>
+               
+               {{ form.password.label }}<br>
+               {{ form.password }}
+               <br>
+              
+               {{ form.submit }}<br>
+           <p><strong>Please login with Password "richardking"</strong></p>
+           <p><strong>Enter any Username of your choice</strong></p>
+           <p><strong>Ensure you must enter the same username to check back the result</strong></p>
+               
+            </div>
+
+            
+         </fieldset>
+      </form>
+      
+   </body>
+</html>

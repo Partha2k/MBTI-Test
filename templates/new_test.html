@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Create Test</h2>
+      {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+      <ul class="flashes">
+      <div class="message_flash">{{ message }}</div>
+      </ul>
+      {% endfor %}
+      {% endwith %}
+
+      {% for message in form.moduleNum.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.weight_A.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.optionA.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.weight_B.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.optionB.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form action = "http://192.168.0.102/admin/createTest/continue" method = post>
+         <fieldset>
+            <legend>Upload Questions</legend>
+            {{ form.hidden_tag() }}
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.moduleNum.label }}<br>
+               {{ form.moduleNum }}
+               <br>
+               
+               {{ form.sectionNum.label }}<br>
+               {{ form.sectionNum }}
+               <br>
+               
+               {{ form.questions.label }}<br>
+               {{ form.questions }}
+               <br>
+               
+               {{ form.questionType.label }}<br>
+               {{ form.questionType }}
+               <br>
+               
+               {{ form.weight_A.label }}<br>
+               {{ form.weight_A }}
+               <br>
+
+               {{ form.optionA.label }}<br>
+               {{ form.optionA }}
+               <br>
+
+               {{ form.weight_B.label }}<br>
+               {{ form.weight_B }}
+               <br>
+
+               {{ form.optionB.label }}<br>
+               {{ form.optionB}}
+               <br>
+               
+               {{ form.submit }}<br>
+
+               
+            </div>
+
+            
+         </fieldset>
+      </form>
+      <p><a href="http://192.168.0.102/admin/success">Finish Uploading </a>
+   </body>
+</html>

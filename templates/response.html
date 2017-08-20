@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+   <body>
+   
+     
+     
+    <form action = "/contTest/{{ ini }}" method = post>
+         <fieldset>
+      
+            <legend>Questions</legend>
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               <table>
+               {{ form.type }}
+               <tr>{{ question }}<br></tr>
+               <tr>{{ form.option.label }}<br></tr>
+               
+               <tr>{{ form.option }}<br></tr>
+                   
+           
+                              
+               </table>
+            </div>
+
+            {{ form.submit }}
+         </fieldset>
+      </form>
+      
+   </body>
+</html>

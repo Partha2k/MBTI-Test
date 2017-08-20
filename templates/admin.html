@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Admin Login</h2>
+      {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+      <ul class="flashes">
+      <div class="message_flash">{{ message }}</div>
+      </ul>
+      {% endfor %}
+      {% endwith %}
+    
+
+		
+      {% for message in form.username.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+
+      {% for message in form.password.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form action = "http://192.168.0.102/admin/adminDashboard" method = post>
+         <fieldset>
+            <legend>Login to Check Admministrator Dashboard</legend>
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.username.label }}<br>
+               {{ form.username }}
+               <br>
+               
+               {{ form.password.label }}<br>
+               {{ form.password }}
+               <br>
+              
+               {{ form.submit }}
+               <p><a href="http://192.168.0.102/admin/changepassword">Create a new Admin Password </a>
+            </div>
+
+            
+         </fieldset>
+      </form>
+      
+   </body>
+</html>

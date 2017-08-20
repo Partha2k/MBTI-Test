@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <h2 style = "text-align: center;">Login Form</h2>
+      {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+      <ul class="flashes">
+      <div class="message_flash">{{ message }}</div>
+      </ul>
+      {% endfor %}
+      {% endwith %}
+		
+      {% for message in form.username.errors %}
+         <div>{{ message }}</div>
+      {% endfor %}
+      
+      
+      <form action = "http://192.168.0.102:5000/dashboard" method = post>
+         <fieldset>
+            <legend>Candidate Login</legend>
+            
+            
+            <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+               {{ form.username.label }}<br>
+               {{ form.username }}
+               <br>
+               
+               {{ form.password.label }}<br>
+               {{ form.password }}
+               <br>
+              
+               {{ form.submit }}
+               <p><a href="http://192.168.0.102:5000/register">Not Have an account? Sing Up here</a>
+            </div>
+
+            
+         </fieldset>
+      </form>
+      
+   </body>
+</html>
